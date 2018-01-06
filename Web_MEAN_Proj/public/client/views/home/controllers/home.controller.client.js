@@ -5,7 +5,7 @@
     function currencyController(CurrencyService) {
         var vm = this;
 
-        //event handlers
+        //todo handlers
         vm.convertRate = convertRate;
 
         function convertRate(amount) {

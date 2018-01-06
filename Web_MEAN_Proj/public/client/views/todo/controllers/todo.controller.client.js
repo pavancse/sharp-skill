@@ -1,9 +1,9 @@
 (function () {
     angular
         .module("LearningApp")
-        .controller("EventController",eventController);
+        .controller("TodoController",todoController);
 
-    function eventController($routeParams) {
+    function todoController($routeParams) {
         var vm = this;
         vm.hostID = $routeParams['hid'];
 

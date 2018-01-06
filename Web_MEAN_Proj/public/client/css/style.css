@@ -1,0 +1,17 @@
+body { padding-top: 50px; }
+
+.modal-header-task{
+    max-height: 300px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff !important;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px 10px;
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+    z-index: 1;
+}
+
+.modal{
+    top: 22px;
+}

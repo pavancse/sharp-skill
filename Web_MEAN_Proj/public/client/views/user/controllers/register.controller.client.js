@@ -24,7 +24,7 @@
                         .then(function (user) {
                             user = user.data;
                             console.log(user);
-                            $location.url('/host/' + user._id+'/event');
+                            $location.url('/host/' + user._id+'/todo');
                         }, function (err) {
                             vm.error = "Sorry, could not register";
                         });

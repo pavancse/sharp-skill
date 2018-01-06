@@ -5,7 +5,7 @@ module.exports = function (mongoose) {
         password: String,
         firstName: String,
         lastName: String
-    }, {collection: 'firstMeanProjDB.user'});
+    }, {collection: 'user'});
 
     return UserSchema;
 };

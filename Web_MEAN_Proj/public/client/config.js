@@ -15,9 +15,9 @@
                 controller: "LoginController",
                 controllerAs: "model"
             })
-            .when("/host/:hid/event", {
-                templateUrl: "views/event/templates/event.view.client.html",
-                controller: "EventController",
+            .when("/host/:hid/todo", {
+                templateUrl: "views/todo/templates/todo.view.client.html",
+                controller: "TodoController",
                 controllerAs: "model"
             })
             .when("/register", {
