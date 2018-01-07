@@ -7,9 +7,14 @@
 
         var api = {
             "register" : register,
-            "login" : login
+            "login" : login,
+            "logout" : logout
         }
         return api;
+
+        function logout(user) {
+            return $http.post("/api/user/logout", user)
+        }
 
         function login(user) {
             return $http.post("/api/user/login", user);

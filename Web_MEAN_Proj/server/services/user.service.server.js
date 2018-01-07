@@ -15,6 +15,7 @@ module.exports = function (app, userModel) {
 
     app.post("/api/user/register", register);
     app.post("/api/user/login", passport.authenticate('user','local'), login);
+    app.post("/api/user/logout", logout);
 
 
 
@@ -72,6 +73,11 @@ module.exports = function (app, userModel) {
         //     });
         var user = req.user;
         res.json(user);
+    }
+
+    function logout(req, res) {
+        req.logOut();
+        res.sendStatus(200);
     }
 
     function register(req, res) {

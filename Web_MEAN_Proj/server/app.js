@@ -14,4 +14,5 @@ module.exports = function (app) {
 
     require("./services/service.service.server.js")(app);
     require("./services/user.service.server.js")(app, model.userModel);
+    require("./services/task.service.server")(app, model.taskModel);
 };
