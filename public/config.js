@@ -5,11 +5,6 @@
 
     function configuration($routeProvider) {
         $routeProvider
-            .when("/home", {
-                templateUrl: "client/views/home/templates/home.view.client.html",
-                controller: "CurrencyController",
-                controllerAs: "model"
-            })
             .when("/login", {
                 templateUrl: "client/views/user/templates/login.view.client.html",
                 controller: "LoginController",
