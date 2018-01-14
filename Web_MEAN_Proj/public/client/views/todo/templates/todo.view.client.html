@@ -14,27 +14,27 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
+                <li class="active"><a href="#">All Tasks<span class="sr-only">(current)</span></a></li>
+                <!--<li><a href="#">Link</a></li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="#">Action</a></li>-->
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <!--<li><a href="#">Something else here</a></li>-->
+                        <!--<li role="separator" class="divider"></li>-->
+                        <!--<li><a href="#">Separated link</a></li>-->
+                        <!--<li role="separator" class="divider"></li>-->
+                        <!--<li><a href="#">One more separated link</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="navbar-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </li>
+                <!--<li class="navbar-form">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control" placeholder="Search">-->
+                    <!--</div>-->
+                <!--</li>-->
                 <li><a href="#" ng-click="model.logout()">Logout</a></li>
                 <!--<li class="dropdown">-->
                     <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
@@ -74,11 +74,11 @@
         </thead>
         <tbody>
         <tr ng-repeat="task in model.tasks">
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" ng-change="model.closeTask(task)" ng-model="task.checked"></td>
             <td>{{task.title}}</td>
             <td>{{task.dueDate}}</td>
-            <td class="text-center"><a href=""><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></a></td>
-            <td class="text-center"><a href="" ng-click="model.deleteTask(task)"><span class="glyphicon glyphicon-trash" style="color:red;" aria-hidden="true"></span></a></td>
+            <td class="text-center"><a href="" ng-click="model.updateFavourite(task)"><span ng-class="{'glyphicon glyphicon-star':task.favourite, 'glyphicon glyphicon-star-empty':!task.favourite}"  aria-hidden="true"></span></a></td>
+            <td class="text-center"><a href="" ng-click="model.deleteTaskModel(task)"><span class="glyphicon glyphicon-trash" style="color:red;" aria-hidden="true"></span></a></td>
         </tr>
         </tbody>
     </table>
@@ -126,6 +126,26 @@
                     </a>
 
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header-delete">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+                <h4 class="modal-title" id="myModalLabel">{{model.delTask.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you you want to delete this task?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="model.deleteTask(model.delTask)">Okay</button>
             </div>
         </div>
     </div>

@@ -1,17 +1,34 @@
 body { padding-top: 50px; }
 
 .modal-header-task{
-    max-height: 300px;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    color: #fff !important;
     text-align: center;
-    font-size: 40px;
-    padding: 10px 10px;
-    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-    z-index: 1;
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff !important;
 }
 
 .modal{
     top: 22px;
+}
+
+.modal-header-delete{
+
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #d9534f;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff !important;
 }

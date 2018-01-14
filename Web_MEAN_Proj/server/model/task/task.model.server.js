@@ -6,6 +6,8 @@ module.exports = function (mongoose, q) {
     TaskModel.createTask = createTask;
     TaskModel.findAllTasks = findAllTasks;
     TaskModel.deleteTask = deleteTask;
+    TaskModel.closeTask = closeTask;
+    TaskModel.updateFavourite = updateFavourite;
     return TaskModel;
 
     function deleteTask(taskId) {
@@ -45,6 +47,35 @@ module.exports = function (mongoose, q) {
                 deferred.reject(err);
             }
             else {
+                deferred.resolve(doc);
+            }
+        });
+        return deferred.promise;
+    }
+
+    function closeTask(taskId) {
+        var deferred = q.defer();
+
+        TaskModel.findByIdAndUpdate(taskId, {checked:true}, function (err, doc) {
+            if(err){
+                deferred.reject(err);
+            }
+            else {
+                deferred.resolve(doc);
+            }
+        });
+        return deferred.promise;
+    }
+
+    function updateFavourite(task) {
+        var deferred = q.defer();
+        var favourite = !task.favourite;
+        TaskModel.findByIdAndUpdate(task._id, {favourite:favourite}, function (err, doc) {
+            if(err){
+                deferred.reject(err);
+            }
+            else {
+                doc.favourite = favourite;
                 deferred.resolve(doc);
             }
         });

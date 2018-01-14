@@ -8,7 +8,9 @@
         var api = {
             addTask: addTask,
             findAllTasks : findAllTasks,
-            deleteTask : deleteTask
+            deleteTask : deleteTask,
+            closedTask : closedTask,
+            updateFavourite : updateFavourite
         }
         return api;
 
@@ -22,6 +24,14 @@
 
         function deleteTask(taskId) {
             return $http.delete("/api/user/deleteTask/"+taskId);
+        }
+
+        function closedTask(taskId) {
+            return $http.post("/api/user/closeTask/"+taskId);
+        }
+
+        function updateFavourite(task) {
+            return $http.post("/api/user/updateFavTask",task);
         }
 
     }
