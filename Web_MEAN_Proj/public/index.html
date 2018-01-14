@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="LearningApp">
 <head>
     <meta charset="UTF-8">
-    <title>Web Dev Course Home Page</title>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"
+            integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI="
+            crossorigin="anonymous"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="client/css/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- controllers -->
+    <script src="client/views/home/controllers/home.controller.client.js"></script>
+    <script src="client/views/user/controllers/login.controller.client.js"></script>
+    <script src="client/views/user/controllers/register.controller.client.js"></script>
+    <script src="client/views/todo/controllers/todo.controller.client.js"></script>
+
+    <!-- services -->
+    <script src="client/services/service.service.client.js"></script>
+    <script src="client/services/user.service.client.js"></script>
+    <script src="client/services/todo.controller.client.js"></script>
+
+    <title>First MEAN App</title>
 </head>
 <body>
-    <h1>Web Dev Course Home Page</h1>
-
-    <p>
-        Customize this home page to your linking.
-    </p>
-
-    <h2>Required links</h2>
-    <ul>
-        <li>
-            <a href="project/index.html">Project</a>
-        </li>
-        <li>
-            <a href="client/#/home">Assignment</a>
-        </li>
-        <li>
-            <a href="client/#/login">Login</a>
-        </li>
-        <li>
-            <a href="test/index.html">Test MongoDB</a>
-        </li>
-        <li>
-            <a href="https://github.com/jannunzi/web-dev-template">Your public repository at GitHub.com</a>
-        </li>
-    </ul>
+<div ng-view></div>
 </body>
 </html>

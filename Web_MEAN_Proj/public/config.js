@@ -11,17 +11,17 @@
                 controllerAs: "model"
             })
             .when("/login", {
-                templateUrl: "views/user/templates/login.view.client.html",
+                templateUrl: "client/views/user/templates/login.view.client.html",
                 controller: "LoginController",
                 controllerAs: "model"
             })
             .when("/host/:hid/todo", {
-                templateUrl: "views/todo/templates/todo.view.client.html",
+                templateUrl: "client/views/todo/templates/todo.view.client.html",
                 controller: "TodoController",
                 controllerAs: "model"
             })
             .when("/register", {
-                templateUrl: "views/user/templates/register.view.client.html",
+                templateUrl: "client/views/user/templates/register.view.client.html",
                 controller: "RegisterController",
                 controllerAs: "model"
             })
